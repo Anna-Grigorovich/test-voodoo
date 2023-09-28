@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://github.com/Anna-Grigorovich/test-voodoo",
   "scripts": {
-    "start": "parcel src/*.html && npx tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "start": "parcel src/*.html && npx tailwindcss -i ./src/input.css -o ./src/css/style.css --watch",
     "build": "parcel build src/*.html --public-url /test-voodoo/"
   },
   "repository": {
