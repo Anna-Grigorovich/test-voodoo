@@ -8,13 +8,11 @@ function handlerContainerClick(evt) {
   if (!targetBtn) {
     return;
   }
-  // Получите данные о товаре из атрибутов кнопки
   const title = targetBtn.getAttribute('data-title');
   const price = targetBtn.getAttribute('data-price');
   const imgSrc = targetBtn.getAttribute('data-img');
   const id = targetBtn.getAttribute('data-id');
 
-  // Создайте объект с информацией о товаре
   const product = {
     title,
     price,
@@ -22,6 +20,7 @@ function handlerContainerClick(evt) {
     id,
   };
   saveToLocalStorage(product);
+  createItem();
 }
 export default async function fetchCards(option) {
   try {

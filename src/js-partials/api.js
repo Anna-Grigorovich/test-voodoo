@@ -5,7 +5,6 @@ let page = 1;
 export const fetchCard = async () => {
   try {
     const { data } = await axios.get(`/?page=${page}&limit=24`);
-    console.log(data);
     return data;
   } catch (error) {
     console.error(error);
