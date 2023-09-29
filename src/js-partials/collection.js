@@ -1,5 +1,6 @@
 import { saveToLocalStorage } from '../utils/localStorage';
 import { fetchCard } from './api';
+import { createPagination } from './pagination';
 import createItem from './sidebar';
 const galleryEl = document.querySelector('.cards__list');
 galleryEl.addEventListener('click', handlerContainerClick);
@@ -23,15 +24,16 @@ function handlerContainerClick(evt) {
   saveToLocalStorage(product);
   createItem();
 }
-export default async function fetchCards(option) {
+export default async function fetchCards(page) {
   try {
-    const { products } = await fetchCard();
+    const { products } = await fetchCard(page);
     // console.log(products);
     // filmTrendsAPI.page = 1;
     // createPagination(option, 1, total_results);
 
     galleryEl.innerHTML = '';
     galleryEl.insertAdjacentHTML('beforeend', await cardMarkup(products));
+    createPagination();
 
     // window.removeEventListener('load', fetchPopularMovies);
   } catch (error) {
@@ -52,7 +54,7 @@ export async function cardMarkup(card) {
         <div class="relative mb-3">
           <img
             src="${imageSrc}"
-            alt=""
+            alt=""  class="h-[300px] m-w-[300px]"
           />
           <button
             class="text-mainBgColor p-2 bg-black rounded h-[26px] w-[48px] flex justify-center items-center text-xs absolute left-3 top-3"
@@ -67,7 +69,7 @@ export async function cardMarkup(card) {
             <p class="font-bold text-sm ">${card.variants[0].price} Kr</p>
           </div>
           <div>
-            <p class="font-bold text-sm truncate">${card.vendor}</p>
+            <p class="font-bold text-sm truncate max-w-[70px]">${card.vendor}</p>
             <p class="text-sm font-normal">rating</p>
           </div>
         </div>
