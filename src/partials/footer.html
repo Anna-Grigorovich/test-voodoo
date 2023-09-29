@@ -1,6 +1,8 @@
 <footer class="bg-white w-full border-t border-black">
-  <div class="h-auto px-[120px] py-[84px] flex justify-evenly">
-    <div>
+  <div
+    class="h-auto md:px-[120px] p-12 md:py-[84px] flex flex-col md:flex-row md:justify-evenly sm:gap-12"
+  >
+    <div class="flex justify-center not-visible-on-mobile">
       <svg width="82px" height="82px">
         <use href="./image/symbol-defs.svg#icon-Logomark"></use>
       </svg>
@@ -71,6 +73,11 @@
           >
         </li>
       </ul>
+    </div>
+    <div class="flex justify-center visible-on-mobile">
+      <svg width="82px" height="82px">
+        <use href="./image/symbol-defs.svg#icon-Logomark"></use>
+      </svg>
     </div>
   </div>
 </footer>

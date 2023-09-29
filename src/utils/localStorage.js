@@ -31,36 +31,41 @@ export function getCardsFromLocalStorage() {
   return storedCards;
 }
 
-// export function updateQuantityInLocalStorage(cardId, change) {
-//   const storedCards = JSON.parse(localStorage.getItem('cart')) || [];
-//   const updatedCards = storedCards.map(card => {
-//     if (card.id === parseInt(cardId)) {
-//       // Изменяем количество товаров на указанное значение (change)
-//       card.quantity = card.quantity + change;
-//     }
-//     return card;
-//   });
-//   localStorage.setItem('cart', JSON.stringify(updatedCards));
-// }
-
 export function updateQuantityInLocalStorage(cardId, change) {
   const storedCards = JSON.parse(localStorage.getItem('cart')) || [];
   const updatedCards = storedCards.map(card => {
     if (card.id === parseInt(cardId)) {
-      // Изменяем количество товаров на указанное значение (change)
       card.quantity = card.quantity + change;
 
-      // Проверяем, стало ли количество товаров меньше 0
       if (card.quantity < 1) {
-        // Если да, то удаляем эту карточку из массива
         return null;
       }
     }
     return card;
   });
 
-  // Фильтруем, чтобы удалить все null значения (карточки с отрицательным количеством)
   const filteredCards = updatedCards.filter(card => card !== null);
 
   localStorage.setItem('cart', JSON.stringify(filteredCards));
 }
+
+export async function calculateTotal() {
+  try {
+    const cards = await getCardsFromLocalStorage(); // Получаем данные из локального хранилища
+
+    // Используем reduce для подсчета общей суммы
+    const total = cards.reduce((accumulator, card) => {
+      // Проверяем, есть ли цена и количество у карточки
+      if (card.price && card.quantity) {
+        accumulator += card.price * card.quantity;
+      }
+      return accumulator;
+    }, 0); // Начальное значение аккумулятора равно 0
+
+    return total;
+  } catch (error) {
+    console.log(error.message);
+    return 0; // Возвращаем 0 в случае ошибки
+  }
+}
+// console.log(calculateTotal());

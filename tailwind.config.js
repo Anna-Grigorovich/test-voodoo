@@ -9,6 +9,12 @@ module.exports = {
       fontFamily: {
         sans: ['Space Grotesk', 'Space Mono'],
       },
+      screens: {
+        sm: '390px',
+        md: '769px',
+        lg: '1028px',
+        xl: '1440px',
+      },
     },
   },
   plugins: [],

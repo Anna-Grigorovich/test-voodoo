@@ -4,6 +4,7 @@ import {
   removeCardFromLocalStorage,
   updateQuantityInLocalStorage,
 } from '../utils/localStorage';
+import { createTotal } from './total';
 
 const listEl = document.querySelector('.shop_list');
 const svgIcon = require('../image/symbol-defs.svg');
@@ -43,7 +44,7 @@ export default async function createItem() {
     console.log(error.message);
   }
 }
-export async function totalMarkup() {}
+// export async function totalMarkup() {}
 
 export async function itemShopMarkup(cards) {
   const markup = cards.map(card => {
@@ -91,6 +92,7 @@ export async function itemShopMarkup(cards) {
             </div>
           </li>`;
   });
+  createTotal();
   return markup.join('');
 }
 

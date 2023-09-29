@@ -1,28 +1,35 @@
-<div class="container px-28 pt-12">
+<div class="container px-6">
+  <!-- class="container px-28 pt-12" -->
   <div
-    class="bg-black min-w-max p-6 rounded text-white flex items-center justify-between mb-12"
+    class="bg-black min-w-max p-6 rounded text-white flex items-center justify-between"
   >
+    <!-- class="bg-black min-w-max p-6 rounded text-white flex items-center justify-between" -->
+    <!-- mb-12 -->
     <div class="flex gap-1.5 items-end">
       <svg width="24px" height="24px">
         <use href="./image/symbol-defs.svg#icon-alert-circle"></use>
       </svg>
       <p>Aplpha</p>
-      <p class="ml-10 text-yellow-50 text-sm font-medium">
+      <p class="visible-on-mobile">Important info</p>
+      <p class="ml-10 text-yellow-50 text-sm font-medium not-visible-on-mobile">
+        <!-- class="ml-10 text-yellow-50 text-sm font-medium" -->
         Important info regarding our service
       </p>
     </div>
-    <button>
+
+    <button class="popup-button">
       <svg width="24px" height="24px">
         <use href="./image/symbol-defs.svg#icon-chevron-down"></use>
       </svg>
     </button>
   </div>
+  <custom-popup class="mb-12 bg-slate-400 text-yellow-50 text-center rounded">
+    Надеюсь Вам понравилась моя работа с:
+  </custom-popup>
 
-  <div class="mb-[70px]">
+  <div class="mb-[70px] mt-12">
     <ul class="flex flex-wrap gap-6 justify-center cards__list"></ul>
   </div>
-  <!-- 
-  <div class="flex justify-center mb-24 pb-24">1 2 3 4 5 6 7 8 9</div> -->
 
   <div
     class="pagination pb-[196px] flex justify-center gap-2.5 items-center text-lg font-light text-pagination"

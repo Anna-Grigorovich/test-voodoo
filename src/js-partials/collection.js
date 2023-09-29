@@ -51,7 +51,7 @@ export async function cardMarkup(card) {
       imageSrc = 'https://dummyimage.com/300x300/ffffff/ff36ff.png';
     }
 
-    return `<li class="w-[300px] h-[402px]">
+    return `<li class="md:w-[300px] md:h-[402px]">
         <div class="relative mb-3">
           <img
             src="${imageSrc}"
