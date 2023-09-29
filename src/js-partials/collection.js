@@ -14,12 +14,13 @@ function handlerContainerClick(evt) {
   const price = targetBtn.getAttribute('data-price');
   const imgSrc = targetBtn.getAttribute('data-img');
   const id = targetBtn.getAttribute('data-id');
-
+  const quantity = 1;
   const product = {
     title,
     price,
     imgSrc,
     id,
+    quantity,
   };
   saveToLocalStorage(product);
   createItem();
