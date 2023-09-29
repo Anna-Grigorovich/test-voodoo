@@ -6,3 +6,22 @@
     font-family: Space Grotesk, system-ui, sans-serif;
   }
 }
+/* Скрыть вертикальную полосу прокрутки */
+::-webkit-scrollbar {
+  width: 0.5em; /* Установите ширину полосы прокрутки на 0.5em (или другое значение) */
+}
+
+/* Скрыть полосу прокрутки при наведении */
+::-webkit-scrollbar:hover {
+  width: 0.5em; /* Установите ту же ширину полосы прокрутки */
+}
+
+/* Скрыть ползунок полосы прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a; /* Задайте цвет ползунка как прозрачный */
+}
+
+/* Скрыть ползунок полосы прокрутки при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent; /* Задайте тот же цвет ползунка как прозрачный */
+}

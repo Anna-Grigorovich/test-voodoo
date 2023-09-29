@@ -1,5 +1,6 @@
 import { saveToLocalStorage } from '../utils/localStorage';
 import { fetchCard } from './api';
+import createItem from './sidebar';
 const galleryEl = document.querySelector('.cards__list');
 galleryEl.addEventListener('click', handlerContainerClick);
 function handlerContainerClick(evt) {

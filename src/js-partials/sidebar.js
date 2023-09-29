@@ -76,7 +76,7 @@ export async function itemShopMarkup(cards) {
               </div>
               <div>
                 <button>
-                  <svg width="24px" height="24px" fill="#FFFFFF">
+                  <svg width="24px" height="24px" fill="#FFFFFF" >
                     <use href="./image/symbol-defs.svg#icon-delete"></use>
                   </svg>
                 </button>
