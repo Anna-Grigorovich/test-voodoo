@@ -51,12 +51,12 @@ export async function itemShopMarkup(cards) {
                   class="w-[74px] h-[74px]"
                 />
               </div>
-              <div>
+              <div class=" flex flex-col gap-3 ">
                 <p class="h-3 text-yellow-50 text-sm font-bold">${
                   card.title || 'Product Name'
                 }</p>
                 <p class="h-3 text-yellow-50 text-sm font-bold">${
-                  card.price || '1 000 KR.'
+                  card.price
                 }</p>
                 <div class="flex">
                   <button>
