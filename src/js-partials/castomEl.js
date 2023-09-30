@@ -2,6 +2,7 @@ class CustomPopup extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this.style.display = 'none';
     this.shadowRoot.innerHTML = `
 
       <slot></slot>
