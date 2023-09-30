@@ -1,4 +1,3 @@
-// Ваш JavaScript-файл
 class CustomPopup extends HTMLElement {
   constructor() {
     super();

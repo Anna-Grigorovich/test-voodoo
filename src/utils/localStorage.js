@@ -68,4 +68,3 @@ export async function calculateTotal() {
     return 0; // Возвращаем 0 в случае ошибки
   }
 }
-// console.log(calculateTotal());

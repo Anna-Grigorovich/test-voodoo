@@ -68,5 +68,3 @@ export function createPagination() {
     paginationEl.appendChild(lastPageButton);
   }
 }
-
-// createPagination();

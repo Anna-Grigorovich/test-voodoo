@@ -17,7 +17,7 @@ const cartIcons = document.querySelectorAll('.cart-icon');
 cartIcons.forEach(cartIcon => {
   cartIcon.addEventListener('click', () => {
     sidebar.classList.toggle('translate-x-full'); // Переключаем класс, чтобы показать/скрыть сайдбар
-    // Проверяем, виден ли сейчас сайдбар (класс 'translate-x-full' не применен)
+    // Проверяем, виден ли сейчас сайдбар
     const sidebarVisible = !sidebar.classList.contains('translate-x-full');
     // Если сайдбар виден, вызываем createItem
     if (sidebarVisible) {
@@ -44,7 +44,6 @@ export default async function createItem() {
     console.log(error.message);
   }
 }
-// export async function totalMarkup() {}
 
 export async function itemShopMarkup(cards) {
   const markup = cards.map(card => {

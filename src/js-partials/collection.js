@@ -28,15 +28,9 @@ function handlerContainerClick(evt) {
 export default async function fetchCards(page) {
   try {
     const { products } = await fetchCard(page);
-    // console.log(products);
-    // filmTrendsAPI.page = 1;
-    // createPagination(option, 1, total_results);
-
     galleryEl.innerHTML = '';
     galleryEl.insertAdjacentHTML('beforeend', await cardMarkup(products));
     createPagination();
-
-    // window.removeEventListener('load', fetchPopularMovies);
   } catch (error) {
     console.log(error.message);
   }
@@ -81,10 +75,8 @@ export async function cardMarkup(card) {
         </button>
       </li>`;
   });
-  //   console.log(markup);
 
   return markup.join('');
 }
 
-// cardMarkup();
 fetchCards();
